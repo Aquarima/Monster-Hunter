@@ -1,7 +1,7 @@
-package fr.ehis.main.world;
+package fr.exalow.main.world;
 
-import fr.ehis.main.entities.Entity;
-import fr.ehis.main.entities.player.Player;
+import fr.exalow.main.entities.Entity;
+import fr.exalow.main.entities.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;

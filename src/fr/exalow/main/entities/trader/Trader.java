@@ -1,9 +1,9 @@
-package fr.ehis.main.entities.trader;
+package fr.exalow.main.entities.trader;
 
-import fr.ehis.main.entities.Entity;
-import fr.ehis.main.entities.player.Player;
-import fr.ehis.main.world.Position;
-import fr.ehis.main.world.World;
+import fr.exalow.main.entities.Entity;
+import fr.exalow.main.entities.player.Player;
+import fr.exalow.main.world.Position;
+import fr.exalow.main.world.World;
 
 public class Trader implements Entity {
 

@@ -1,4 +1,4 @@
-package fr.ehis.main.entities;
+package fr.exalow.main.entities;
 
 public interface Movable {
 

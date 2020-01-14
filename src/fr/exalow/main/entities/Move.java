@@ -1,6 +1,6 @@
-package fr.ehis.main.entities;
+package fr.exalow.main.entities;
 
-import fr.ehis.main.world.Position;
+import fr.exalow.main.world.Position;
 
 public enum Move {
 

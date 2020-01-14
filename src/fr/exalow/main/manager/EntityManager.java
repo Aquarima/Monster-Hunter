@@ -1,8 +1,8 @@
-package fr.ehis.main.manager;
+package fr.exalow.main.manager;
 
-import fr.ehis.main.entities.Entity;
-import fr.ehis.main.entities.monster.Monster;
-import fr.ehis.main.entities.player.Player;
+import fr.exalow.main.entities.Entity;
+import fr.exalow.main.entities.monster.Monster;
+import fr.exalow.main.entities.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;

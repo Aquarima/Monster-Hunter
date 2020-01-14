@@ -1,6 +1,6 @@
-package fr.ehis.main.entities.trader;
+package fr.exalow.main.entities.trader;
 
-import fr.ehis.main.entities.items.Item;
+import fr.exalow.main.entities.items.Item;
 
 import java.util.ArrayList;
 import java.util.List;

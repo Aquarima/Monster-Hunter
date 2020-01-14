@@ -1,4 +1,4 @@
-package fr.ehis.main.world;
+package fr.exalow.main.world;
 
 public class World {
 

@@ -1,10 +1,10 @@
-package fr.ehis.main.core;
+package fr.exalow.main.core;
 
-import fr.ehis.main.entities.Move;
-import fr.ehis.main.entities.player.Player;
-import fr.ehis.main.manager.EntityManager;
-import fr.ehis.main.world.Position;
-import fr.ehis.main.world.World;
+import fr.exalow.main.entities.Move;
+import fr.exalow.main.entities.player.Player;
+import fr.exalow.main.manager.EntityManager;
+import fr.exalow.main.world.Position;
+import fr.exalow.main.world.World;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -1,10 +1,10 @@
-package fr.ehis.main.entities.monster;
+package fr.exalow.main.entities.monster;
 
-import fr.ehis.main.entities.Entity;
-import fr.ehis.main.entities.Movable;
-import fr.ehis.main.entities.Move;
-import fr.ehis.main.world.Position;
-import fr.ehis.main.world.World;
+import fr.exalow.main.entities.Entity;
+import fr.exalow.main.entities.Movable;
+import fr.exalow.main.entities.Move;
+import fr.exalow.main.world.Position;
+import fr.exalow.main.world.World;
 
 public class Monster implements Entity, Movable {
 

@@ -1,6 +1,6 @@
-package fr.ehis.main;
+package fr.exalow.main;
 
-import fr.ehis.main.core.MonsterHunter;
+import fr.exalow.main.core.MonsterHunter;
 
 public class Main {
 
