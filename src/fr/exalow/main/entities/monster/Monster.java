@@ -14,7 +14,7 @@ public class Monster implements Entity, Movable {
 
     public Monster(World world, Position firstPos) {
         this.world = world;
-        this.position = firstPos;
+        this.setPosition(firstPos);
         this.health = 100;
     }
 
@@ -38,7 +38,9 @@ public class Monster implements Entity, Movable {
 
     @Override
     public void setPosition(Position newPosition) {
-        this.world.getCase(position).removeEntity(this);
+        if (position != null) {
+            this.world.getCase(position).removeEntity(this);
+        }
         this.position = newPosition;
         this.world.getCase(position).addEntity(this);
     }

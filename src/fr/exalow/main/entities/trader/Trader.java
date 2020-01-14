@@ -13,7 +13,7 @@ public class Trader implements Entity {
 
     public Trader(World world, Position firstPos) {
         this.world = world;
-        this.position = firstPos;
+        this.setPosition(firstPos);
         this.shop = new Shop();
     }
 
@@ -32,7 +32,9 @@ public class Trader implements Entity {
 
     @Override
     public void setPosition(Position newPosition) {
-        this.world.getCase(position).removeEntity(this);
+        if (position != null) {
+            this.world.getCase(position).removeEntity(this);
+        }
         this.position = newPosition;
         this.world.getCase(position).addEntity(this);
     }
