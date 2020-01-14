@@ -16,22 +16,26 @@ public class Player implements Entity, Movable {
 
     public Player(World world, Position firstPos) {
         this.world = world;
-        this.position = firstPos;
+        this.setPosition(firstPos);
         this.inventory = new Inventory();
         this.health = 100;
         this.money = 0;
     }
-
-    public void increaseHealth(double amount) {
-        this.health += amount;
+	
+	public boolean isAlive() {
+        return health > 0;
     }
-
-    public void decreaseHealth(double amount) {
-        this.health -= amount;
-    }
-
-    public boolean isAlive() {
-        return health < 0;
+	
+	public void setHealth(double value) {
+		this.health += value;
+	}
+	
+	public void setMoney(double value) {
+		this.money += value;
+	}
+	
+	public int getMoney() {
+        return money;
     }
 
     @Override
@@ -39,13 +43,16 @@ public class Player implements Entity, Movable {
         this.setPosition(Position.sumOf(position, move.getMove()));
     }
 
-    public int getMoney() {
-        return money;
+    @Override
+    public void onInteract(Entity entity) {
+
     }
 
     @Override
     public void setPosition(Position newPosition) {
-        this.world.getCase(position).removeEntity(this);
+        if (position != null) {
+            this.world.getCase(position).removeEntity(this);
+        }
         this.position = newPosition;
         this.world.getCase(position).addEntity(this);
     }

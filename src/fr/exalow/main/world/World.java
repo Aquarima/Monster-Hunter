@@ -5,7 +5,7 @@ public class World {
     private Case[][] map = new Case[8][8];
 
     public World() {
-        this.initialize();
+        initialize();
     }
 
     public void initialize() {
@@ -17,7 +17,7 @@ public class World {
     }
 
     public void display() {
-        System.out.println("\n    0   1   2   3   4   5   6   7   8");
+        System.out.println("\n    0   1   2   3   4   5   6   7");
         for (int x = 0; x < map.length; x++) {
             System.out.print(x + "  ");
             for (int y = 0; y < map.length; y++) {

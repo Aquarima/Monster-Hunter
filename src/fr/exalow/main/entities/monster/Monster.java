@@ -18,37 +18,22 @@ public class Monster implements Entity, Movable {
         this.health = 100;
     }
 
-    public void increaseHealth(double amount) {
-        this.health += amount;
-    }
-
-    public void decreaseHealth(double amount) {
-        this.health -= amount;
-    }
-
     public boolean isAlive() {
         return health < 0;
     }
 
+    public void setHealth(double value) {
+        this.health += value;
+    }
+
     @Override
     public void move(Move move) {
-
+        this.setPosition(Position.sumOf(position, move.getMove()));
     }
 
-    private boolean isEnemyAround() {
-        final Move[] moves = Move.values();
-        for (int i = 0; i < 4; i++) {
+    @Override
+    public void onInteract(Entity entity) {
 
-        }
-        return false;
-    }
-
-    private Position getEnemyPosition() {
-        final Move[] moves = Move.values();
-        for (int i = 0; i < 4; i++) {
-
-        }
-        return null;
     }
 
     @Override

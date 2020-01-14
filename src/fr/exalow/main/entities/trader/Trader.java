@@ -1,6 +1,7 @@
 package fr.ehis.main.entities.trader;
 
 import fr.ehis.main.entities.Entity;
+import fr.ehis.main.entities.player.Player;
 import fr.ehis.main.world.Position;
 import fr.ehis.main.world.World;
 
@@ -14,6 +15,19 @@ public class Trader implements Entity {
         this.world = world;
         this.position = firstPos;
         this.shop = new Shop();
+    }
+
+    @Override
+    public void onInteract(Entity entity) {
+
+    }
+
+    public void tradeRequestTo(Player player) {
+
+    }
+
+    public void tradeWith(Player player) {
+
     }
 
     @Override

@@ -30,7 +30,7 @@ public class Case {
     @Override
     public String toString() {
         if (!cellContent.isEmpty()) {
-            return cellContent.get(cellContent.size()).toString();
+            return cellContent.get(0).toString();
         }
         return " ";
     }
