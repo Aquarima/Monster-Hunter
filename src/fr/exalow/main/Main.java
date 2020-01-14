@@ -1,4 +1,4 @@
-package fr.exalow.main;
+package fr.ehis.main;
 
 public class Main {
 

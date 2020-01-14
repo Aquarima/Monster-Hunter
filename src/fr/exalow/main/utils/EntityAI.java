@@ -1,4 +1,4 @@
-package fr.exalow.main.utils;
+package fr.ehis.main.utils;
 
 public class EntityAI {
 }

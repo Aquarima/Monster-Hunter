@@ -1,6 +1,6 @@
-package fr.exalow.main.entities;
+package fr.ehis.main.entities;
 
-import fr.exalow.main.world.Position;
+import fr.ehis.main.world.Position;
 
 public enum Move {
 
@@ -22,5 +22,22 @@ public enum Move {
 
     public Position getMove() {
         return position;
+    }
+
+    public static Move parseMove(int value) {
+        switch (value) {
+            case 0:
+                return UP;
+            case 1:
+                return DOWN;
+            case 2:
+                return RIGHT;
+            case 3:
+                return LEFT;
+            default:
+                System.err.println("[ERROR] Number must be between 0-3 !\n");
+        }
+
+        return NONE;
     }
 }

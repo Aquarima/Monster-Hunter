@@ -1,4 +1,5 @@
-package fr.exalow.main.entities.monster;
+package fr.ehis.main.entities.monster;
 
-public class Body {
+public enum Body {
+	HEAD, BODY, LEGS;
 }

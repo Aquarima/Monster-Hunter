@@ -1,4 +1,4 @@
-package fr.exalow.main.world;
+package fr.ehis.main.world;
 
 public class Position {
 
@@ -14,7 +14,7 @@ public class Position {
         return x > 8 || x < 0 || y > 8 || y < 0;
     }
 
-    public Position sumOf(Position pos1, Position pos2) {
+    public static Position sumOf(Position pos1, Position pos2) {
         return new Position(pos1.x + pos2.x, pos1.y + pos2.y);
     }
 

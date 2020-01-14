@@ -1,4 +1,4 @@
-package fr.exalow.main.entities.items;
+package fr.ehis.main.entities.items;
 
 public interface Item {
 }

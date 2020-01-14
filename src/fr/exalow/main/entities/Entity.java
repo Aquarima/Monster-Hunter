@@ -1,10 +1,10 @@
-package fr.exalow.main.entities;
+package fr.ehis.main.entities;
 
-import fr.exalow.main.world.Position;
+import fr.ehis.main.world.Position;
 
 public interface Entity {
 
-    void setPosition(Position position);
+    void setPosition(Position newPosition);
 
     Position getPosition();
 }

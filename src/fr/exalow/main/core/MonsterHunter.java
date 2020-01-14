@@ -1,4 +1,4 @@
-package fr.exalow.main.core;
+package fr.ehis.main.core;
 
 public class MonsterHunter {
 

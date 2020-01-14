@@ -1,4 +1,4 @@
-package fr.exalow.main.entities.trader;
+package fr.ehis.main.entities.trader;
 
 public class Shop {
 }
