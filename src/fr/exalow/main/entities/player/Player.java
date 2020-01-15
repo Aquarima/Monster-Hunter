@@ -3,6 +3,7 @@ package fr.exalow.main.entities.player;
 import fr.exalow.main.entities.Entity;
 import fr.exalow.main.entities.Movable;
 import fr.exalow.main.entities.Move;
+import fr.exalow.main.entities.trader.Trader;
 import fr.exalow.main.world.Position;
 import fr.exalow.main.world.World;
 
@@ -29,7 +30,15 @@ public class Player implements Entity, Movable {
 	public void setHealth(double value) {
 		this.health += value;
 	}
-	
+
+	public void increaseMoney(int amount) {
+        money += amount;
+    }
+
+    public void decreaseMoney(int amount) {
+        money -= amount;
+    }
+
 	public void setMoney(double value) {
 		this.money += value;
 	}
@@ -38,23 +47,31 @@ public class Player implements Entity, Movable {
         return money;
     }
 
+    public Inventory getInventory() {
+        return inventory;
+    }
+
     @Override
     public void move(Move move) {
         this.setPosition(Position.sumOf(position, move.getMove()));
     }
 
-    @Override
     public void onInteract(Entity entity) {
-
+        if (entity instanceof Trader) {
+            Trader trader = (Trader) entity;
+            trader.tradeRequestTo(this);
+        }
     }
 
     @Override
     public void setPosition(Position newPosition) {
-        if (position != null) {
-            this.world.getCase(position).removeEntity(this);
+        if (!newPosition.isOutOfWorld()) {
+            if (position != null) this.world.getCase(position).removeEntity(this);
+            this.position = newPosition;
+            this.world.getCase(position).addEntity(this);
+            return;
         }
-        this.position = newPosition;
-        this.world.getCase(position).addEntity(this);
+        System.out.println("[!] You can't move this way !\n");
     }
 
     @Override

@@ -10,16 +10,11 @@ public class Case {
 
     private List<Entity> cellContent = new ArrayList<>();
 
-    public boolean containPlayer() {
-        for (Entity entity : cellContent) {
-            if (entity instanceof Player) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public void addEntity(Entity entity) {
+        if (entity instanceof Player) {
+            Player player = (Player) entity;
+            cellContent.forEach(player::onInteract);
+        }
         this.cellContent.add(entity);
     }
 

@@ -2,6 +2,7 @@ package fr.exalow.main.core;
 
 import fr.exalow.main.entities.Move;
 import fr.exalow.main.entities.player.Player;
+import fr.exalow.main.entities.trader.Trader;
 import fr.exalow.main.manager.EntityManager;
 import fr.exalow.main.world.Position;
 import fr.exalow.main.world.World;
@@ -16,7 +17,9 @@ public class MonsterHunter {
     private Player player = new Player(world, new Position(0, 0));
 
     public void run() {
+        manager.addEntity(new Trader(world, new Position(0, 1)));
         while (player.isAlive()) {
+
             System.out.println("\n[INFO] Your position is : " + player.getPosition());
 
             System.out.println("\n[P] = Player - [M] = Monster - [!] = Combat");
@@ -37,10 +40,6 @@ public class MonsterHunter {
 
             manager.update();
         }
-    }
-
-    public void update() {
-
     }
 
     public void stop() {

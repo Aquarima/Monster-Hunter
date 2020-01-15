@@ -32,17 +32,12 @@ public class Monster implements Entity, Movable {
     }
 
     @Override
-    public void onInteract(Entity entity) {
-
-    }
-
-    @Override
     public void setPosition(Position newPosition) {
-        if (position != null) {
-            this.world.getCase(position).removeEntity(this);
+        if (!newPosition.isOutOfWorld()) {
+            if (position != null) this.world.getCase(position).removeEntity(this);
+            this.position = newPosition;
+            this.world.getCase(position).addEntity(this);
         }
-        this.position = newPosition;
-        this.world.getCase(position).addEntity(this);
     }
 
     @Override

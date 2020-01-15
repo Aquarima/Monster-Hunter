@@ -35,7 +35,7 @@ public enum Move {
             case 3:
                 return LEFT;
             default:
-                System.err.println("[ERROR] Number must be between 0-3 !\n");
+                System.err.println("[!] Number must be between 0-3 !\n");
         }
 
         return NONE;

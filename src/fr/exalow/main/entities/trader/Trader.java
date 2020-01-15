@@ -5,7 +5,11 @@ import fr.exalow.main.entities.player.Player;
 import fr.exalow.main.world.Position;
 import fr.exalow.main.world.World;
 
+import java.util.Scanner;
+
 public class Trader implements Entity {
+
+    private Scanner scanner = new Scanner(System.in);
 
     private World world;
     private Position position;
@@ -17,26 +21,46 @@ public class Trader implements Entity {
         this.shop = new Shop();
     }
 
-    @Override
-    public void onInteract(Entity entity) {
-
-    }
-
     public void tradeRequestTo(Player player) {
-
+        if (!player.getInventory().isFull()) {
+            System.out.println("\n[Trader] Welcome sir, Do you want to buy something ?");
+            System.out.print("\nType (true/false) : ");
+            if (scanner.nextBoolean()) tradeWith(player);
+        }
     }
 
-    public void tradeWith(Player player) {
+    private void tradeWith(Player player) {
 
+        System.out.println("\n[Trader] Well, This is my shop choose something to buy...");
+        System.out.println(shop);
+
+        int input = 0;
+
+        do {
+            System.out.print("\nType item number : ");
+            input = scanner.nextInt();
+        } while (!shop.exist(input));
+
+        System.out.print("\nAmount : ");
+
+        int amount = scanner.nextInt();
+
+        if (player.getMoney() < shop.getPriceOf(input, amount)) {
+            System.err.println("\n[!] You can't afford this !");
+            return;
+        }
+
+        player.decreaseMoney(shop.getPriceOf(input, amount));
+        player.getInventory().addItem(shop.getItem(input));
     }
 
     @Override
     public void setPosition(Position newPosition) {
-        if (position != null) {
-            this.world.getCase(position).removeEntity(this);
+        if (!newPosition.isOutOfWorld()) {
+            if (position != null) this.world.getCase(position).removeEntity(this);
+            this.position = newPosition;
+            this.world.getCase(position).addEntity(this);
         }
-        this.position = newPosition;
-        this.world.getCase(position).addEntity(this);
     }
 
     @Override
